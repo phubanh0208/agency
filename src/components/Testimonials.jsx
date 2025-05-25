@@ -6,30 +6,31 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Nguyễn Văn A",
-      position: "Giám đốc Nhà hàng Fusion",
+      name: "Trần Quang Minh",
+      position: "Chủ website hocbaohiem.com",
       content:
-        "Dịch vụ thiết kế website của họ thực sự xuất sắc. Website mới đã giúp nhà hàng của chúng tôi tăng lượng đặt bàn trực tuyến lên 40% chỉ trong tháng đầu tiên.",
+        "MT Design đã giúp tôi xây dựng một website chuyên nghiệp, tốc độ tải nhanh và chuẩn SEO. Lượng truy cập tự nhiên tăng rõ rệt chỉ sau vài tuần.",
       rating: 5,
-      image: "nguyen-van-a",
+      image: "tran-quang-minh",
     },
     {
-      name: "Trần Thị B",
-      position: "Chủ Shop thời trang",
+      name: "Nguyễn Thị Lan",
+      position: "Chủ Spa Hoa Anh Đào",
       content:
-        "Chiến dịch TikTok họ xây dựng đã giúp shop của tôi tăng doanh số bán hàng gấp đôi. Đội ngũ chuyên nghiệp và luôn cập nhật xu hướng mới nhất.",
+        "Tôi rất ấn tượng với các mẫu banner do MT Design thiết kế — màu sắc hài hòa, truyền tải đúng thông điệp. Khách hàng phản hồi rất tích cực trên fanpage.",
       rating: 5,
-      image: "tran-thi-b",
+      image: "nguyen-thi-lan",
     },
     {
-      name: "Lê Văn C",
-      position: "Quản lý Spa & Wellness",
+      name: "Phạm Văn Huy",
+      position: "Chủ cửa hàng điện máy Huy Phát",
       content:
-        "Bộ nhận diện thương hiệu họ thiết kế đã giúp spa của chúng tôi nổi bật và thu hút nhiều khách hàng mới. Rất hài lòng với kết quả và sẽ tiếp tục hợp tác lâu dài.",
+        "MT Design đã giúp cửa hàng của tôi có một bộ banner khuyến mãi cực kỳ bắt mắt. Chiến dịch ra mắt sản phẩm mới rất thành công nhờ thiết kế chuyên nghiệp.",
       rating: 4,
-      image: "le-van-c",
+      image: "pham-van-huy",
     },
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,10 +86,12 @@ const Testimonials = () => {
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <img 
+                  <img
                     alt={`${testimonial.name} avatar`}
                     className="w-full h-full object-cover"
-                   src="https://images.unsplash.com/photo-1554639250-ff81ade7a6f4" />
+                    src={`/images/avatars/${testimonial.image}.png`}
+                  />
+
                 </div>
                 <div>
                   <h4 className="font-bold">{testimonial.name}</h4>
@@ -101,11 +104,10 @@ const Testimonials = () => {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-4 w-4 ${
-                      i < testimonial.rating
-                        ? "text-yellow-400 fill-yellow-400"
-                        : "text-gray-300"
-                    }`}
+                    className={`h-4 w-4 ${i < testimonial.rating
+                      ? "text-yellow-400 fill-yellow-400"
+                      : "text-gray-300"
+                      }`}
                   />
                 ))}
               </div>

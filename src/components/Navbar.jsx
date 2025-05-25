@@ -36,18 +36,22 @@ const Navbar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center">
+            <a href="/" className="flex items-center space-x-2">
+              <img
+                src="/logo.png"
+                alt="MT Design Logo"
+                className="h-12 w-auto"
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                LocalMarketing
+              Design
               </span>
             </a>
           </div>

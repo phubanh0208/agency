@@ -29,7 +29,7 @@ const About = () => {
               <img 
                 alt="Marketing team working together"
                 className="w-full h-auto"
-               src="https://images.unsplash.com/photo-1696041757866-f19a8e46fab1" />
+               src="/about.jpg" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-full blur-2xl" />
           </motion.div>

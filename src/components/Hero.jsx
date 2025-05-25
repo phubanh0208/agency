@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -21,7 +20,7 @@ const Hero = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 1,
       },
     },
   };
@@ -47,50 +46,59 @@ const Hero = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            Nâng tầm thương hiệu của bạn với{" "}
-            <span className="gradient-text">giải pháp marketing</span> chuyên nghiệp
+            Cùng <span className="gradient-text">MT Design</span> <br /> thiết kế <span className="gradient-text">mọi thứ</span> nâng tầm <br />hình ảnh doanh nghiệp của bạn
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            Chúng tôi cung cấp các dịch vụ marketing toàn diện giúp doanh nghiệp địa phương của bạn
-            nổi bật và thu hút khách hàng tiềm năng.
+            Chúng tôi chuyên thiết kế website, banner, ảnh bìa fanpage và phát triển nội dung TikTok –
+            giúp thương hiệu của bạn nổi bật, chuyên nghiệp và thu hút khách hàng tại địa phương.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-            >
-              Liên hệ ngay
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-gray-300 dark:border-gray-700"
-            >
-              Xem dịch vụ
-            </Button>
+            {/* Liên hệ ngay → Cuộn đến #contact */}
+            <a href="#contact">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              >
+                Liên hệ ngay
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+
+            {/* Xem dịch vụ → Cuộn đến #services */}
+            <a href="#services">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-gray-300 dark:border-gray-700"
+              >
+                Xem dịch vụ
+              </Button>
+            </a>
+
           </motion.div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }} // Hiệu ứng chỉ chạy 1 lần khi 30% ảnh vào màn hình
+          transition={{ duration: 1 }}
           className="mt-16 md:mt-24 relative"
         >
-          <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-2xl">
-            <img 
-              alt="Marketing agency workspace"
-              className="w-full h-full object-cover"
-             src="https://images.unsplash.com/photo-1696041757866-f19a8e46fab1" />
+          <div className="aspect-[10/5] rounded-xl overflow-hidden shadow-2xl">
+            <img
+              alt="Không gian làm việc MT Design"
+              className="w-full h-full object-cover "
+              src="/banner.jpg"
+            />
           </div>
           <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full opacity-20 blur-2xl" />
           <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full opacity-20 blur-2xl" />

@@ -74,7 +74,7 @@
 }
 
 .service-card:hover::before {
-  @apply opacity-100;
+  @apply opacity-80;
 }
 
 .portfolio-item {
@@ -92,4 +92,41 @@
 .testimonial-card::after {
   content: '"';
   @apply absolute top-0 right-4 text-8xl text-gray-200 dark:text-gray-800 font-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+.animate-fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.reason-bg {
+  background: linear-gradient(120deg,#e9e6ff 0%,#f3f5ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+.reason-bg::before {
+  content: "";
+  position: absolute;
+  top: -10%; left: -10%; right: -10%; bottom: -10%;
+  background: url('/images/bg-abstract.png') no-repeat center/cover;
+  opacity: 0.11;
+  z-index: 0;
+  filter: blur(1.5px);
+}
+.glow-effect {
+  box-shadow: 0 0 32px 0 #a08dfb44, 0 8px 40px 0 #fff6;
+}
+.icon-glow {
+  filter: drop-shadow(0 0 12px #a08dfb80);
 }
